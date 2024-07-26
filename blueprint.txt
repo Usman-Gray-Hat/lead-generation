@@ -1,0 +1,55 @@
+===========
+BLUE PRINT:
+===========
+
+//  For User
+1)  Timestamp => Current timestamp by default. 
+
+2)  Date => Current date by default.
+
+3)  User like "Usman", "Talha", "Abdullah" etc. => Through session
+
+4)  Account name (Drop down list)  like "Elia", "Olivia" , "Rachel" etc. (Required)
+
+5)  Platform name (Drop down list) like "Discord", "Instagram", "Twitter" etc. (Required)
+
+6)  Channel link (Apply only if platform is not discord) 
+    (By default the value will be "-")
+
+7)  Platform like Discord/Instagram/Twitter username of a client. (Required)
+
+//  For Admin => (These options will be available in edit section for admin)
+8)  Comments. Concise conversation between you and client.
+    (By default the value will be "Waiting for a response")
+
+9)  Status (Drop down list) - "Pending", "Closed", "Follow up", "Rejected".
+    (By default the value will be "Pending")
+
+10) Follow up date with remarks (Apply only if status is Follow up).
+    (By default the value will be "-")
+
+11) Reason of rejection (Apply only if status is Rejected).
+    (By default the value will be "-")
+
+12) Qualified status (Drop down list) - "Qualified", "Disqualified".
+    (By default the value will be "-")
+
+
+
+CREATE TABLE leads
+(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    lead_timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    lead_date DATE DEFAULT CURRENT_DATE,
+    employee_name VARCHAR(50),
+    account_name VARCHAR(50),
+    platform_name VARCHAR(50),
+    channel_link VARCHAR(225) Default '-',
+    client_username VARCHAR(100),
+    comments VARCHAR(500) Default 'Waiting for a response',
+    status VARCHAR(50) Default 'Pending',
+    follow_up_date_with_remarks VARCHAR(500) Default '-',
+    reason_of_rejection VARCHAR(500) Default '-',
+    qualified_status VARCHAR(20) Default '-'
+    admin_id_FK INT,
+);

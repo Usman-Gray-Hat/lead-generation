@@ -1,0 +1,18 @@
+CREATE DATABASE emeraldx;
+USE emeraldx;
+CREATE TABLE account_credentials
+(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50),
+    gmail VARCHAR(50),
+    gmail_password VARCHAR(50),
+    twitter VARCHAR(50),
+    twitter_password VARCHAR(50),
+    instagram VARCHAR(50),
+    instagram_password VARCHAR(50),
+    discord VARCHAR(50),
+    discord_password VARCHAR(50),
+    twitch VARCHAR(50),
+    twitch_password VARCHAR(50),
+    status VARCHAR (20) DEFAULT 'Active'
+);

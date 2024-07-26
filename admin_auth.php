@@ -1,0 +1,13 @@
+<?php
+if(!isset($_SESSION['id']))
+{
+    header("Location:index.php");
+}
+else
+{
+    if($_SESSION['login_type']!=1)
+    {
+        header("Location:home.php");
+    }
+}
+?>
